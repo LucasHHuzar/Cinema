@@ -1,6 +1,6 @@
 package principal.modelos;
 
-public class Pedido {
+public class Pedido extends Cardapio{
 
 
 
