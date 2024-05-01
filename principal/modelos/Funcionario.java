@@ -17,6 +17,11 @@ public class Funcionario {
         //Construtor vazio
     }
 
+    //Inicie essse construtor pois la no gerente pedia
+    public Funcionario(String nome) {
+        this.nome = nome;
+    }
+
     public void adicionarAtributos(String nome, Integer numIdentifiFuncionario, String cargo){
         Funcionario func = new Funcionario();
         func.nome = nome;

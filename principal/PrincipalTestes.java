@@ -2,12 +2,22 @@ package principal;
 
 import principal.modelos.Cardapio;
 import principal.modelos.Funcionario;
+import principal.modelos.Menu;
 
 import java.io.IOException;
 import java.util.Scanner;
 
 public class PrincipalTestes {
     public static void main(String[] args) throws IOException {
+
+
+        //Testando menu
+        Menu mostrar = new Menu();
+
+        mostrar.menu();
+
+        /*
+
 
         Scanner scanner = new Scanner(System.in);
 
@@ -23,6 +33,9 @@ public class PrincipalTestes {
         cardapio.cadastrarProduto();
 
         cardapio.getCardapio();
+
+
+*/
 
     }
 }
