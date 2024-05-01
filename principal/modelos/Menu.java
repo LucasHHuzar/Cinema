@@ -124,7 +124,7 @@ public class Menu {
                                     System.out.println("=================");
                                     System.out.println("Menu Atendente Caixa:");
                                     System.out.println("1. Conta");
-                                    System.out.println("2. Qual a forma de pagamento");
+                                    System.out.println("2. Qual a forma de pagamento?");
                                     System.out.println("3. Sair");
                                     menu5 = scanner.nextInt();
 
