@@ -14,11 +14,18 @@ public class PrincipalTestes {
 //
 //        mostrar.menu();
 
-        Cardapio cardapio = new Cardapio();
-        List<Cardapio> cardapios = cardapio.getCardapio();
+//        Cardapio cardapio = new Cardapio();
+//        List<Cardapio> cardapios = cardapio.getCardapio();
+//
+//        for (Cardapio card : cardapios) {
+//            System.out.println(card);
+//        }
 
-        for (Cardapio card : cardapios) {
-            System.out.println(card);
+        Funcionario funcionario = new Funcionario();
+        List<Funcionario> funcionarios = funcionario.getFuncionarios();
+
+        for (Funcionario func : funcionarios) {
+            System.out.println(func);
         }
 
 //

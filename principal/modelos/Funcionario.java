@@ -10,16 +10,15 @@ public class Funcionario {
     protected String cargo;
 
     //Iniciando a lista de funcionários
-    public static List<Funcionario> funcionarios = new ArrayList<>();
+    List<Funcionario> funcionarios = new ArrayList<>();
 
-    public void adicionarFuncionario(Funcionario funcionario) {
-        funcionarios.add(funcionario);
-        new Funcionario("Lucas", 1, "Garçom");
-    }
+
 
     //Iniciei um construtor vazio, só pra deixar caso precisemos
-    public Funcionario() { //Construtor vazio
+    public Funcionario() {
+        adicionarFuncionario();
     }
+
 
     public Funcionario(String nome, Integer numIdentifiFuncionario, String cargo) {
         this.nome = nome;
@@ -27,8 +26,13 @@ public class Funcionario {
         this.cargo = cargo;
         funcionarios.add(this);
     }
+    public void adicionarFuncionario() {
+        funcionarios.add(new Funcionario("Lucas", 1, "Gerente"));
+        funcionarios.add(new Funcionario("Andre", 2, "Adiministrativo"));
+        funcionarios.add(new Funcionario("Yuri", 3, "Garçom"));
+    }
 
-    public static List<Funcionario> getFuncionarios() {
+    public List<Funcionario> getFuncionarios() {
         return funcionarios;
     }
 

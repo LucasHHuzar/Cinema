@@ -10,8 +10,6 @@ import java.util.Scanner;
 
 public class Cardapio {
 
-    Scanner scanner = new Scanner(System.in);
-
     //Iniciei as variáveis
     private Integer tipoPrato;
     private Integer numProduto;
@@ -23,7 +21,9 @@ public class Cardapio {
     //Lista do cardapio
     List<Cardapio> cardapio = new ArrayList<>();
 
-    public Cardapio() {  }
+    public Cardapio() {
+        cadastroProdutos();
+    }
 
     public Cardapio(Integer tipoPrato, Integer numProduto, String nomePrato, String bebida, String sobremesa, Double valor) {
         this.tipoPrato = tipoPrato;
@@ -32,7 +32,6 @@ public class Cardapio {
         this.bebida = bebida;
         this.sobremesa = sobremesa;
         this.valor = valor;
-        cardapio = new ArrayList<>();
     }
 
     //Getters e Setters
@@ -106,22 +105,12 @@ public class Cardapio {
 
     }
 
-    private void cadastroBebida(){
-
-
-    }
-
-    private void cadastroSobremesa(){
-
-
-        scanner.close();
-    }
 
     @Override
     public String toString() {
         return "Cardapio{" +
                 ", Lista de Produtos:'" + '\'' +
-                ", prato='" + nomePrato + '\'' +
+                ", prato='" + numProduto + nomePrato + '\'' +
                 ", bebida='" + bebida + '\'' +
                 ", sobremesa='" + sobremesa + '\'' +
                 ", valor=" + valor +
