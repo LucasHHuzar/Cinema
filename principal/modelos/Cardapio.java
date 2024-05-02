@@ -23,14 +23,14 @@ public class Cardapio {
     //Lista do cardapio
     List<Cardapio> cardapio = new ArrayList<>();
 
-    public void adicionarProdutos(Integer numProduto, String prato, String ingredientes, String bebida,
+    public void adicionarProdutos(Integer numProduto, String prato, /*String ingredientes*/ String bebida,
                                   String sobremesa, Double valor){
 
         Cardapio produtos = new Cardapio();
 
         produtos.numProduto = numProduto;
         produtos.prato = prato;
-        produtos.ingredientes = ingredientes;
+//        produtos.ingredientes = ingredientes;
         produtos.bebida = bebida;
         produtos.sobremesa = sobremesa;
         produtos.valor = valor;
