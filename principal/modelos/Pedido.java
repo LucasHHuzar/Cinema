@@ -1,6 +1,7 @@
 package principal.modelos;
 
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Pedido {
@@ -8,6 +9,9 @@ public class Pedido {
     Scanner scanner = new Scanner(System.in);
 
     Cliente cliente = new Cliente();
+
+    List<Cliente> clientes = Dados.listaClientes();
+
 //    Cardapio cardapio = new Cardapio();
 
     public void pedidoCliente(){
@@ -18,8 +22,8 @@ public class Pedido {
         System.out.println("Qual a mesa do cliente?");
         var mesa = scanner.nextInt();
 
-        for (Cliente cliente1 : cliente.clientes) {
-            if (nome == cliente.getNome() && mesa == cliente.getMesa()){
+        for (Cliente cliente1 : clientes) {
+            if (nome.equals(){
                     System.out.println("Qual o pedido?");
             } else {
                 System.out.println("Cliente não existe!");

@@ -10,9 +10,9 @@ public class PrincipalTestes {
     public static void main(String[] args) throws IOException {
 
         //Testando menu
-//        Menu mostrar = new Menu();
-//
-//        mostrar.menu();
+        Menu mostrar = new Menu();
+
+        mostrar.menu();
 
 //        Cardapio cardapio = new Cardapio();
 //        List<Cardapio> cardapios = cardapio.getCardapio();
@@ -21,12 +21,12 @@ public class PrincipalTestes {
 //            System.out.println(card);
 //        }
 
-        Funcionario funcionario = new Funcionario();
-        List<Funcionario> funcionarios = funcionario.getFuncionarios();
-
-        for (Funcionario func : funcionarios) {
-            System.out.println(func);
-        }
+//        Funcionario funcionario = new Funcionario();
+//        List<Funcionario> funcionarios = funcionario.getFuncionarios();
+//
+//        for (Funcionario func : funcionarios) {
+//            System.out.println(func);
+//        }
 
 //
 //        Gerente gerente = new Gerente();
