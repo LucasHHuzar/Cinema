@@ -91,7 +91,7 @@ public class Cardapio {
         this.cardapio = cardapio;
     }
 
-    private void cadastroProdutos(){
+    private void cadastroProdutos() {
 
         cardapio.add(new Cardapio(1, 1, "Strogonoff de Frango", "", "", 22.00));
         cardapio.add(new Cardapio(1, 2, "Batata Frita", "", "", 8.00));
@@ -105,12 +105,12 @@ public class Cardapio {
 
     }
 
-
     @Override
     public String toString() {
         return "Cardapio{" +
-                ", Lista de Produtos:'" + '\'' +
-                ", prato='" + numProduto + nomePrato + '\'' +
+                "tipoPrato=" + tipoPrato +
+                ", numProduto=" + numProduto +
+                ", nomePrato='" + nomePrato + '\'' +
                 ", bebida='" + bebida + '\'' +
                 ", sobremesa='" + sobremesa + '\'' +
                 ", valor=" + valor +

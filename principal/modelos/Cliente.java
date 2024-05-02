@@ -39,7 +39,6 @@ public class Cliente {
 
         cliente.nome = nome;
         cliente.mesa = mesa;
-//        cliente.aniversario = aniversario;
 
         clientes.add(cliente);
     }
@@ -52,9 +51,6 @@ public class Cliente {
         System.out.println("Digite a mesa que o cliente está: ");
         this.mesa = scanner.nextInt();
         scanner.nextLine();
-
-//        System.out.println("Digite a data de aniversário do cliente: ");
-//        this.aniversario = scanner.nextLine();
 
     }
 
