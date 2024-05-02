@@ -1,6 +1,5 @@
 package principal.modelos;
 
-import java.time.DateTimeException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -11,53 +10,36 @@ public class Cliente {
 
     private String nome;
     private Integer mesa;
-    private String aniversario;
+//    private String aniversario;
 
     List<Cliente> clientes = new ArrayList<>();
 
-    public Cliente() {
-        //Construtor vazio
+    public Cliente() { //Construtor vazio
     }
 
-    public Integer getMesa() {
-        return mesa;
-    }
+    public Integer getMesa() { return mesa; }
 
-    public void setMesa(Integer mesa) {
-        this.mesa = mesa;
-    }
+    public void setMesa(Integer mesa) { this.mesa = mesa; }
 
-    public String getNome() {
-        return nome;
-    }
+    public String getNome() { return nome; }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+    public void setNome(String nome) { this.nome = nome; }
 
-    public String getAniversario() {
-        return aniversario;
-    }
+//    public String getAniversario() { return aniversario; }
+//
+//    public void setAniversario(String aniversario) { this.aniversario = aniversario; }
 
-    public void setAniversario(String aniversario) {
-        this.aniversario = aniversario;
-    }
+    public List<Cliente> getClientes() { return clientes; }
 
-    public List<Cliente> getClientes() {
-        return clientes;
-    }
+    public void setClientes(List<Cliente> clientes) { this.clientes = clientes; }
 
-    public void setClientes(List<Cliente> clientes) {
-        this.clientes = clientes;
-    }
-
-    public void adicionarCliente(String nome, Integer mesa, String aniversario){
+    public void adicionarCliente(String nome, Integer mesa){
 
         Cliente cliente = new Cliente();
 
         cliente.nome = nome;
         cliente.mesa = mesa;
-        cliente.aniversario = aniversario;
+//        cliente.aniversario = aniversario;
 
         clientes.add(cliente);
     }
@@ -72,8 +54,8 @@ public class Cliente {
         this.mesa = scanner.nextInt();
         scanner.nextLine();
 
-        System.out.println("Digite a data de aniversário do cliente: ");
-        this.aniversario = scanner.nextLine();
+//        System.out.println("Digite a data de aniversário do cliente: ");
+//        this.aniversario = scanner.nextLine();
 
     }
 
@@ -103,7 +85,6 @@ public class Cliente {
         return "Cliente{" +
                 ", nome='" + nome + '\'' +
                 ", mesa=" + mesa +
-                ", aniversario='" + aniversario + '\'' +
                 '}';
     }
 }

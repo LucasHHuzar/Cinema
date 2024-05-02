@@ -9,8 +9,6 @@ public class Gerente extends Funcionario {
     private Boolean despedir;
     private Boolean alterarSalario;
 
-    PrincipalTestes principal = new PrincipalTestes();
-
     public Gerente(){ }
 
 //    public Gerente(String nome, Boolean despedir, Boolean alterarSalario) {

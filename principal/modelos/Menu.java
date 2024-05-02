@@ -3,6 +3,11 @@ package principal.modelos;
 import java.util.Scanner;
 
 public class Menu {
+
+    Pedido pedido = new Pedido();
+    Gerente gerente = new Gerente();
+    Cliente cliente = new Cliente();
+
         //criando menu...
         //Estou criando menu dentro de outro menu
     public void menu(){
@@ -31,23 +36,27 @@ public class Menu {
                     do{
                         System.out.println("=================");
                         System.out.println("Menu CLIENTE:");
-                        System.out.println("1. Cardápio");
-                        System.out.println("2. Fazer Pedido");
-                        System.out.println("3. Pedir a conta");
-                        System.out.println("4. Voltar para o MENU");
+                        System.out.println("1. Cadastro de Cliente");
+                        System.out.println("2. Cardápio");
+                        System.out.println("3. Fazer Pedido");
+                        System.out.println("4. Pedir a conta");
+                        System.out.println("5. Voltar para o MENU");
                         menu1 = scanner.nextInt();
 
                         switch (menu1){
                             case 1:
-                                System.out.println("CARDAPIO");
+                                cliente.cadastrarClientes();
                                 break;
                             case 2:
-                                System.out.println("FAZENDO PEDIDO");
+                                System.out.println("CARDAPIO");
                                 break;
                             case 3:
-                                System.out.println("PEDINDO A CONTA");
+                                pedido.pedidoCliente();
                                 break;
                             case 4:
+                                System.out.println("PEDINDO A CONTA");
+                                break;
+                            case 5:
                                 System.out.println("...");
                                 returnMenu = true;
                         }
@@ -59,7 +68,7 @@ public class Menu {
                     do {
                         System.out.println("=================");
                         System.out.println("Menu GERENTE:");
-                        System.out.println("1. teste1");
+                        System.out.println("1. Cadastrar Funcionário");
                         System.out.println("2. teste2");
                         System.out.println("3. teste3");
                         System.out.println("4. Sair");
@@ -67,7 +76,7 @@ public class Menu {
 
                         switch (menu2){
                             case 1:
-                                System.out.println("teste1");
+                                gerente.addFuncionario();
                                 break;
                             case 2:
                                 System.out.println("teste2");

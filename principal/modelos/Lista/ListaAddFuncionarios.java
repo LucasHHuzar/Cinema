@@ -2,6 +2,7 @@ package principal.modelos.Lista;
 
 import principal.modelos.Funcionario;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,8 +21,20 @@ public class ListaAddFuncionarios {
         return funcionarios;
     }
 
+
     public static void main(String[] args) {
+
         ListaAddFuncionarios listaFuncionarios = new ListaAddFuncionarios();
+
+//        File diretorioFuncionarios = new File("C:\\Restaurante");
+//        if (!diretorioFuncionarios.exists()) {
+//            diretorioFuncionarios.mkdir();
+//        }
+//
+//        File arquivo = new File(diretorioFuncionarios, "test.txt");
+//        if (!arquivo.exists()) {
+//            arquivo.createNewFile();
+//        }
 
         // Adicionando funcionários
         listaFuncionarios.adicionarFuncionario(new Funcionario("Lucas", 1, "Garçom"));

@@ -4,7 +4,6 @@ import java.util.*;
 
 public class Funcionario {
 
-
     //Iniciando as variáveis
     protected String nome;
     protected Integer numIdentifiFuncionario;
@@ -17,8 +16,6 @@ public class Funcionario {
         funcionarios.add(funcionario);
         new Funcionario("Lucas", 1, "Garçom");
     }
-
-
 
     //Iniciei um construtor vazio, só pra deixar caso precisemos
     public Funcionario() { //Construtor vazio
@@ -34,7 +31,6 @@ public class Funcionario {
     public static List<Funcionario> getFuncionarios() {
         return funcionarios;
     }
-
 
     //Inicie essse construtor pois la no gerente pedia
     public Funcionario(String nome) {
@@ -66,14 +62,6 @@ public class Funcionario {
                 ", numFuncionario=" + numIdentifiFuncionario +
                 ", cargo='" + cargo + '\'' +
                 '}';
-    }
-
-    private void gerente(){
-
-        String sobrenome;
-
-
-
     }
 
 }
