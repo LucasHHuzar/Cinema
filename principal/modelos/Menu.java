@@ -7,6 +7,7 @@ public class Menu {
     Pedido pedido = new Pedido();
     Gerente gerente = new Gerente();
     Cliente cliente = new Cliente();
+    Cardapio cardapio = new Cardapio();
 
         //criando menu...
         //Estou criando menu dentro de outro menu

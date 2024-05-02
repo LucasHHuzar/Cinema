@@ -21,7 +21,6 @@ public class ListaAddFuncionarios {
         return funcionarios;
     }
 
-
     public static void main(String[] args) {
 
         ListaAddFuncionarios listaFuncionarios = new ListaAddFuncionarios();

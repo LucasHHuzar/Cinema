@@ -13,9 +13,9 @@ public class Cardapio {
     Scanner scanner = new Scanner(System.in);
 
     //Iniciei as variáveis
+    private Integer tipoPrato;
     private Integer numProduto;
-    private String prato;
-    private String ingredientes;
+    private String nomePrato;
     private String bebida;
     private String sobremesa;
     private Double valor;
@@ -23,22 +23,27 @@ public class Cardapio {
     //Lista do cardapio
     List<Cardapio> cardapio = new ArrayList<>();
 
-    public void adicionarProdutos(Integer numProduto, String prato, String ingredientes, String bebida,
-                                  String sobremesa, Double valor){
+    public Cardapio() {  }
 
-        Cardapio produtos = new Cardapio();
-
-        produtos.numProduto = numProduto;
-        produtos.prato = prato;
-        produtos.ingredientes = ingredientes;
-        produtos.bebida = bebida;
-        produtos.sobremesa = sobremesa;
-        produtos.valor = valor;
-
-        cardapio.add(produtos);
+    public Cardapio(Integer tipoPrato, Integer numProduto, String nomePrato, String bebida, String sobremesa, Double valor) {
+        this.tipoPrato = tipoPrato;
+        this.numProduto = numProduto;
+        this.nomePrato = nomePrato;
+        this.bebida = bebida;
+        this.sobremesa = sobremesa;
+        this.valor = valor;
+        cardapio = new ArrayList<>();
     }
 
     //Getters e Setters
+    public Integer getTipoPrato() {
+        return tipoPrato;
+    }
+
+    public void setTipoPrato(Integer tipoPrato) {
+        this.tipoPrato = tipoPrato;
+    }
+
     public Integer getNumProduto() {
         return numProduto;
     }
@@ -47,20 +52,12 @@ public class Cardapio {
         this.numProduto = numProduto;
     }
 
-    public String getPrato() {
-        return prato;
+    public String getNomePrato() {
+        return nomePrato;
     }
 
     public void setPrato(String prato) {
-        this.prato = prato;
-    }
-
-    public String getIngredientes() {
-        return ingredientes;
-    }
-
-    public void setIngredientes(String ingredientes) {
-        this.ingredientes = ingredientes;
+        this.nomePrato = nomePrato;
     }
 
     public String getBebida() {
@@ -95,86 +92,36 @@ public class Cardapio {
         this.cardapio = cardapio;
     }
 
-    private void cadastroPrato(){
+    private void cadastroProdutos(){
 
-        System.out.println("Qual o número do prato?");
-        this.numProduto = scanner.nextInt();
-        scanner.nextLine();
-
-        System.out.println("Qual o nome do prato?");
-        this.prato = scanner.nextLine();
-
-        System.out.println("Qual os ingredientes?");
-        this.ingredientes = scanner.nextLine();
-
-        System.out.println("Qual o valor do prato?");
-        this.valor = scanner.nextDouble();
-        scanner.nextLine();
+        cardapio.add(new Cardapio(1, 1, "Strogonoff de Frango", "", "", 22.00));
+        cardapio.add(new Cardapio(1, 2, "Batata Frita", "", "", 8.00));
+        cardapio.add(new Cardapio(1, 3, "Bife Parmegiana", "", "", 10.00));
+        cardapio.add(new Cardapio(2, 4, "", "Água", "", 2.00));
+        cardapio.add(new Cardapio(2, 5, "", "Coca-Cola", "", 6.00));
+        cardapio.add(new Cardapio(2, 6, "", "Chocomilk", "", 5.50));
+        cardapio.add(new Cardapio(3, 7, "", "", "Petit-Gateau", 20.90));
+        cardapio.add(new Cardapio(3, 8, "", "", "Bolo de Pote", 10.00));
+        cardapio.add(new Cardapio(3, 9, "", "", "Banana Caramelizada", 9.00));
 
     }
 
     private void cadastroBebida(){
 
-        System.out.println("Qual o número da bebida?");
-        this.numProduto = scanner.nextInt();
-
-        System.out.println("Qual o nome da bebida?");
-        this.bebida = scanner.nextLine();
-
-        System.out.println("Qual os ingredientes?");
-        this.ingredientes = scanner.nextLine();
-
-        System.out.println("Qual o valor da bebida?");
-        this.valor = scanner.nextDouble();
 
     }
 
     private void cadastroSobremesa(){
 
-        System.out.println("Qual o número da sobremesa?");
-        this.numProduto = scanner.nextInt();
-
-        System.out.println("Qual o nome da sobremesa?");
-        this.sobremesa = scanner.nextLine();
-
-        System.out.println("Qual os ingredientes?");
-        this.ingredientes = scanner.nextLine();
-
-        System.out.println("Qual o valor da sobremesa?");
-        this.valor = scanner.nextDouble();
-
-    }
-
-    //Fiz a classe para cadastro de pratos, bebidas e tal
-    public void cadastrarProduto(){
-
-        System.out.println("--------------------------------------------");
-        System.out.println("----------Cadastrando novo produto----------");
-        System.out.println("-----Vai ser prato, bebida ou sobremesa?-----");
-        var op = scanner.nextLine();
-
-        switch (op){
-
-            case "prato": cadastroPrato();
-                return;
-
-            case "bebida": cadastroBebida();
-                return;
-
-            case "sobremesa": cadastroSobremesa();
-                return;
-        }
 
         scanner.close();
-
     }
 
     @Override
     public String toString() {
         return "Cardapio{" +
-                "scanner=" + scanner +
-                ", prato='" + prato + '\'' +
-                ", ingredientes='" + ingredientes + '\'' +
+                ", Lista de Produtos:'" + '\'' +
+                ", prato='" + nomePrato + '\'' +
                 ", bebida='" + bebida + '\'' +
                 ", sobremesa='" + sobremesa + '\'' +
                 ", valor=" + valor +

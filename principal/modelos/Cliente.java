@@ -48,7 +48,6 @@ public class Cliente {
 
         System.out.println("Digite o nome: ");
         this.nome = scanner.nextLine();
-        scanner.nextLine();
 
         System.out.println("Digite a mesa que o cliente está: ");
         this.mesa = scanner.nextInt();

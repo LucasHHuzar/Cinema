@@ -1,13 +1,14 @@
 package principal.modelos;
 
+
 import java.util.Scanner;
 
-public class Pedido extends Cardapio {
+public class Pedido {
 
     Scanner scanner = new Scanner(System.in);
 
     Cliente cliente = new Cliente();
-    Cardapio cardapio = new Cardapio();
+//    Cardapio cardapio = new Cardapio();
 
     public void pedidoCliente(){
 
@@ -16,13 +17,10 @@ public class Pedido extends Cardapio {
 
         System.out.println("Qual a mesa do cliente?");
         var mesa = scanner.nextInt();
-        scanner.nextLine();
 
         for (Cliente cliente1 : cliente.clientes) {
-            if (nome == cliente.getNome()){
-                if (mesa == cliente.getMesa()){
+            if (nome == cliente.getNome() && mesa == cliente.getMesa()){
                     System.out.println("Qual o pedido?");
-                }
             } else {
                 System.out.println("Cliente não existe!");
             }
