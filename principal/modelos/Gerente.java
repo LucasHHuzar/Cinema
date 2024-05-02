@@ -1,20 +1,23 @@
 package principal.modelos;
 
+import principal.PrincipalTestes;
+
 import java.util.Scanner;
 
 public class Gerente extends Funcionario {
 
     private Boolean despedir;
     private Boolean alterarSalario;
-    protected String cargo;
+
+    PrincipalTestes principal = new PrincipalTestes();
 
     public Gerente(){ }
 
-    public Gerente(String nome, Boolean despedir, Boolean alterarSalario) {
-        super(nome);
-        this.despedir = despedir;
-        this.alterarSalario = alterarSalario;
-    }
+//    public Gerente(String nome, Boolean despedir, Boolean alterarSalario) {
+//        super(nome);
+//        this.despedir = despedir;
+//        this.alterarSalario = alterarSalario;
+//    }
 
     public Boolean getAlterarSalario() { return alterarSalario; }
 
@@ -33,9 +36,13 @@ public class Gerente extends Funcionario {
     }
 
     public void adicionarAtributos(String nome, Integer numIdentifiFuncionario, String cargo){
+
+        Funcionario func = new Funcionario();
+
         func.nome = nome;
         func.numIdentifiFuncionario = numIdentifiFuncionario;
-        this.cargo = cargo;
+        func.cargo = cargo;
+
         funcionarios.add(func);
     }
 
