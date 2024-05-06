@@ -18,12 +18,7 @@ public class Cardapio {
     private String sobremesa;
     private Double valor;
 
-    //Lista do cardapio
-    List<Cardapio> cardapio = new ArrayList<>();
-
-    public Cardapio() {
-        cadastroProdutos();
-    }
+    public Cardapio() { }
 
     public Cardapio(Integer tipoPrato, Integer numProduto, String nomePrato, String bebida, String sobremesa, Double valor) {
         this.tipoPrato = tipoPrato;
@@ -83,37 +78,4 @@ public class Cardapio {
         this.valor = valor;
     }
 
-    public List<Cardapio> getCardapio() {
-        return cardapio;
-    }
-
-    public void setCardapio(List<Cardapio> cardapio) {
-        this.cardapio = cardapio;
-    }
-
-    private void cadastroProdutos() {
-
-        cardapio.add(new Cardapio(1, 1, "Strogonoff de Frango", "", "", 22.00));
-        cardapio.add(new Cardapio(1, 2, "Batata Frita", "", "", 8.00));
-        cardapio.add(new Cardapio(1, 3, "Bife Parmegiana", "", "", 10.00));
-        cardapio.add(new Cardapio(2, 4, "", "Água", "", 2.00));
-        cardapio.add(new Cardapio(2, 5, "", "Coca-Cola", "", 6.00));
-        cardapio.add(new Cardapio(2, 6, "", "Chocomilk", "", 5.50));
-        cardapio.add(new Cardapio(3, 7, "", "", "Petit-Gateau", 20.90));
-        cardapio.add(new Cardapio(3, 8, "", "", "Bolo de Pote", 10.00));
-        cardapio.add(new Cardapio(3, 9, "", "", "Banana Caramelizada", 9.00));
-
-    }
-
-    @Override
-    public String toString() {
-        return "Cardapio{" +
-                "tipoPrato=" + tipoPrato +
-                ", numProduto=" + numProduto +
-                ", nomePrato='" + nomePrato + '\'' +
-                ", bebida='" + bebida + '\'' +
-                ", sobremesa='" + sobremesa + '\'' +
-                ", valor=" + valor +
-                '}';
-    }
 }

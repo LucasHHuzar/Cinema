@@ -48,7 +48,7 @@ public class Menu {
                                 System.out.println("CARDAPIO");
                                 break;
                             case 2:
-                                pedido.pedidoCliente();
+                                Pedido.addPedidos;
                                 break;
                             case 3:
                                 System.out.println("PEDINDO A CONTA");
