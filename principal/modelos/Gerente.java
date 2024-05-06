@@ -33,39 +33,39 @@ public class Gerente extends Funcionario {
         this.cargo = cargo;
     }
 
-    public void adicionarAtributos(String nome, Integer numIdentifiFuncionario, String cargo){
-
-        Funcionario func = new Funcionario();
-
-        func.nome = nome;
-        func.numIdentifiFuncionario = numIdentifiFuncionario;
-        func.cargo = cargo;
-
-        funcionarios.add(func);
-    }
+//    public void adicionarAtributos(String nome, Integer numIdentifiFuncionario, String cargo){
+//
+//        Funcionario func = new Funcionario();
+//
+//        func.nome = nome;
+//        func.numIdentifiFuncionario = numIdentifiFuncionario;
+//        func.cargo = cargo;
+//
+//        funcionarios.add(func);
+//    }
 
     //Criei uma classe para adicionar funcionários
-    public void addFuncionario(){
+//    public void addFuncionario(){
+//
+//        Scanner scanner = new Scanner(System.in);
+//
+//        for (int i = 0; i < 2; i++) {
+//
+//            System.out.println("Qual o nome do funcionário?");
+//            this.nome = scanner.nextLine();
+//
+//            System.out.println("Qual o número de identificação do funcionário?");
+//            this.numIdentifiFuncionario = scanner.nextInt();
+//            scanner.nextLine();
+//
+//            System.out.println("Qual o cargo do funcionário (Gerente, Administrativo ou Garçom)?");
+//            this.cargo = scanner.nextLine();
+//
+//            adicionarAtributos(nome, numIdentifiFuncionario, cargo);
+//
+//        }
 
-        Scanner scanner = new Scanner(System.in);
-
-        for (int i = 0; i < 2; i++) {
-
-            System.out.println("Qual o nome do funcionário?");
-            this.nome = scanner.nextLine();
-
-            System.out.println("Qual o número de identificação do funcionário?");
-            this.numIdentifiFuncionario = scanner.nextInt();
-            scanner.nextLine();
-
-            System.out.println("Qual o cargo do funcionário (Gerente, Administrativo ou Garçom)?");
-            this.cargo = scanner.nextLine();
-
-            adicionarAtributos(nome, numIdentifiFuncionario, cargo);
-
-        }
-
-        scanner.close();
+       // scanner.close();
     }
 
-}
+//}

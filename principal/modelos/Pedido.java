@@ -10,7 +10,9 @@ public class Pedido {
 
     Cliente cliente = new Cliente();
 
-    List<Cliente> clientes = Dados.listaClientes();
+    List<Funcionario> funcionario = Informacoes.listaFuncionarios();
+
+    List<Cliente> clientes = Informacoes.listaClientes();
 
 //    Cardapio cardapio = new Cardapio();
 
@@ -19,14 +21,13 @@ public class Pedido {
         System.out.println("Qual o nome do cliente?");
         var nome = scanner.nextLine();
 
-        System.out.println("Qual a mesa do cliente?");
-        var mesa = scanner.nextInt();
-
         for (Cliente cliente1 : clientes) {
-            if (nome.equals(){
+            if (nome.equals()){
                     System.out.println("Qual o pedido?");
+                    break;
             } else {
                 System.out.println("Cliente não existe!");
+                break;
             }
         }
 
