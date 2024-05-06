@@ -1,18 +1,36 @@
 package principal;
 
 import principal.modelos.*;
+import principal.modelos.files.Writer;
 
+import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class PrincipalTestes {
     public static void main(String[] args) throws IOException {
 
-        //Testando menu
-        Menu mostrar = new Menu();
+        Writer writer = new Writer();
 
-        mostrar.menu();
+        writer.criarDiretorioEArquivo();
+
+        List<Cardapio> cardapios = Informacoes.cardapios();
+        List<Funcionario> funcionarios = Informacoes.listaFuncionarios();
+        List<Cliente> cliente = Informacoes.listaClientes();
+
+        File arquivo = new File("C:\\Users\\autologon\\LISTA\\ListaCardapio.txt");
+        writer.gravarDadosCard(arquivo, cardapios);
+
+        File arquivoFunc = new File("C:\\Users\\autologon\\LISTA\\ListaFuncionarios.txt");
+        writer.gravarDadosFunc(arquivoFunc, funcionarios);
+
+        File arquivoCliente = new File("C:\\Users\\autologon\\LISTA\\ListaCliente.txt");
+        writer.gravarDadosCliente(arquivoCliente, cliente);
+
+        //Testando menu
+//        Menu mostrar = new Menu();
+//
+//        mostrar.menu();
 
 //        Cardapio cardapio = new Cardapio();
 //        List<Cardapio> cardapios = cardapio.getCardapio();
