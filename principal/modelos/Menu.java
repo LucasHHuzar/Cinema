@@ -9,15 +9,15 @@ import java.util.List;
 
 import java.util.Scanner;
 
-public class Menu {
-
-
-
+public class Menu extends Gerente {
 
     //criando menu...
         //Estou criando menu dentro de outro menu
     public void menu() throws IOException {
         Scanner scanner = new Scanner(System.in);
+
+        Cardapio cardapio = new Cardapio();
+
         int op;
 
         do {
@@ -43,8 +43,8 @@ public class Menu {
                         System.out.println("==============================");
                         System.out.println("Menu CLIENTE:");
                         System.out.println("1. Cardápio");
-                        System.out.println("2. Fazer Pedido");
-                        System.out.println("3. Pedir a conta");
+                        System.out.println("2. Fazer Pedido");//Tirar pedido e adicionar no menu do garçom
+                        System.out.println("3. Pedir a conta");//Tirar conta e adicionar no menu do garçom
                         System.out.println("4. Mostrar Clientes");
                         System.out.println("5. Voltar para o MENU");
                         menu1 = scanner.nextInt();
@@ -57,7 +57,7 @@ public class Menu {
 
                                 break;
                             case 2:
-//                                Pedido.addPedidos;
+                                //Pedido.addPedidos;
                                 break;
                             case 3:
                                 System.out.println("PEDINDO A CONTA");
@@ -91,19 +91,11 @@ public class Menu {
                         switch (menu2){
                             case 1:
                                 //mostrando lista de funcionarios
-                                Reader reader = new Reader();
-                                String caminhoDoArquivo = "C:\\Restaurante\\Listas\\ListaFuncionarios.txt";
-                                reader.mostrarArquivo(caminhoDoArquivo);
+                                listarFunc();
                                 break;
                             case 2:
                                 //codigo para remocao do funcionario da lista
-                                Writer writer = new Writer();
-                                String arquivoCaminho = "C:\\Restaurante\\Listas\\ListaFuncionarios.txt";
-                                //usei esse scanner pois estava passando direto
-                                scanner.nextLine();
-                                System.out.println("Passe o Nome numIdentificação e cargo de quem deseja remover: ");
-                                String itemParaRemover = scanner.nextLine();
-                                writer.removerItemArquivo(arquivoCaminho, itemParaRemover);
+                                demitirFunc();
                                 break;
                             case 3:
                                 //mostrando lista dos clientes

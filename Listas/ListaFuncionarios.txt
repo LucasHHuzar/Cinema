@@ -1,2 +1,0 @@
-André,2,Administrativo
-Felipe,3,Garçom

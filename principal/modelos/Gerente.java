@@ -1,13 +1,17 @@
 package principal.modelos;
 
 import principal.PrincipalTestes;
+import principal.modelos.files.Reader;
+import principal.modelos.files.Writer;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Gerente extends Funcionario {
 
-    private Boolean despedir;
-    private Boolean alterarSalario;
+    Scanner scanner = new Scanner(System.in);
+
+    private String demitir;
 
     public Gerente(){ }
 
@@ -17,20 +21,25 @@ public class Gerente extends Funcionario {
 //        this.alterarSalario = alterarSalario;
 //    }
 
-    public Boolean getAlterarSalario() { return alterarSalario; }
+    public String getDespedir() { return demitir; }
 
-    public void setAlterarSalario(Boolean alterarSalario) { this.alterarSalario = alterarSalario; }
+    public void setDespedir(String demitir) { this.demitir = demitir; }
 
-    public Boolean getDespedir() { return despedir; }
-
-    public void setDespedir(Boolean despedir) { this.despedir = despedir; }
-
-    public String getCargo() {
-        return cargo;
+    public void listarFunc() throws IOException {
+        Reader reader = new Reader();
+        String caminhoDoArquivo = "C:\\Restaurante\\Listas\\ListaFuncionarios.txt";
+        reader.mostrarArquivo(caminhoDoArquivo);
     }
 
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
+    public void  demitirFunc() throws IOException{
+        //codigo para remocao do funcionario da lista
+        Writer writer = new Writer();
+        String arquivoCaminho = "C:\\Restaurante\\Listas\\ListaFuncionarios.txt";
+        //usei esse scanner pois estava passando direto
+        scanner.nextLine();
+        System.out.println("Passe o Nome numIdentificação e cargo de quem deseja remover: ");
+        String itemParaRemover = scanner.nextLine();
+        writer.removerItemArquivo(arquivoCaminho, itemParaRemover);
     }
 
 //    public void adicionarAtributos(String nome, Integer numIdentifiFuncionario, String cargo){
@@ -66,6 +75,4 @@ public class Gerente extends Funcionario {
 //        }
 
        // scanner.close();
-    }
-
-//}
+}
