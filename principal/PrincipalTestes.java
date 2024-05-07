@@ -5,32 +5,44 @@ import principal.modelos.files.Writer;
 
 import java.io.File;
 import java.io.IOException;
+
 import java.util.List;
 
 public class PrincipalTestes {
     public static void main(String[] args) throws IOException {
-
         Writer writer = new Writer();
 
-        writer.criarDiretorioEArquivo();
+//        writer.criarDiretorioEArquivo();
 
-        List<Cardapio> cardapios = Informacoes.cardapios();
-        List<Funcionario> funcionarios = Informacoes.listaFuncionarios();
-        List<Cliente> cliente = Informacoes.listaClientes();
+//        List<Cardapio> cardapios = Informacoes.cardapios();
+//        List<Funcionario> funcionarios = Informacoes.listaFuncionarios();
+//        List<Cliente> cliente = Informacoes.listaClientes();
+//
+//        File arquivo = new File("C:\\Restaurante\\Listas\\ListaCardapio.txt");
+//        writer.gravarDadosCard(arquivo, cardapios);
+//
+//        File arquivoFunc = new File("C:\\Restaurante\\Listas\\ListaFuncionarios.txt");
+//        writer.gravarDadosFunc(arquivoFunc, funcionarios);
+//
+//        File arquivoCliente = new File("C:\\Restaurante\\Listas\\ListaCliente.txt");
+//        writer.gravarDadosCliente(arquivoCliente, cliente);
+//
+//
+//        String caminhoDoArquivo = "C:\\Restaurante\\Listas\\ListaCardapio.txt";
+//        String itemParaRemover = "2,6,,Chocomilk,,5.5";
+//
+//        writer.removerItemArquivo(caminhoDoArquivo, itemParaRemover);
 
-        File arquivo = new File("C:\\Users\\autologon\\LISTA\\ListaCardapio.txt");
-        writer.gravarDadosCard(arquivo, cardapios);
+//
+//        String caminhoDoArquivo = "C:\\Restaurante\\Listas\\ListaCardapio.txt";
+//        reader.mostrarConteudoArquivo(caminhoDoArquivo);
 
-        File arquivoFunc = new File("C:\\Users\\autologon\\LISTA\\ListaFuncionarios.txt");
-        writer.gravarDadosFunc(arquivoFunc, funcionarios);
 
-        File arquivoCliente = new File("C:\\Users\\autologon\\LISTA\\ListaCliente.txt");
-        writer.gravarDadosCliente(arquivoCliente, cliente);
 
         //Testando menu
-//        Menu mostrar = new Menu();
-//
-//        mostrar.menu();
+        Menu mostrar = new Menu();
+
+        mostrar.menu();
 
 //        Cardapio cardapio = new Cardapio();
 //        List<Cardapio> cardapios = cardapio.getCardapio();
