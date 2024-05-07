@@ -4,6 +4,9 @@
 
 package principal.modelos;
 
+import principal.modelos.files.Reader;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -76,6 +79,12 @@ public class Cardapio {
 
     public void setValor(Double valor) {
         this.valor = valor;
+    }
+
+    public void listarCardapio() throws IOException {
+        Reader reader = new Reader();
+        String caminhoDoArquivoCard = "C:\\Restaurante\\Listas\\ListaCardapio.txt";
+        reader.mostrarArquivo(caminhoDoArquivoCard);
     }
 
 }

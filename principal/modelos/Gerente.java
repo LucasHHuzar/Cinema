@@ -15,23 +15,19 @@ public class Gerente extends Funcionario {
 
     public Gerente(){ }
 
-//    public Gerente(String nome, Boolean despedir, Boolean alterarSalario) {
-//        super(nome);
-//        this.despedir = despedir;
-//        this.alterarSalario = alterarSalario;
-//    }
-
     public String getDespedir() { return demitir; }
 
     public void setDespedir(String demitir) { this.demitir = demitir; }
 
+    //serve para chamar no menu do gerente para mostrar a lista de funcionarios
     public void listarFunc() throws IOException {
         Reader reader = new Reader();
         String caminhoDoArquivo = "C:\\Restaurante\\Listas\\ListaFuncionarios.txt";
         reader.mostrarArquivo(caminhoDoArquivo);
     }
 
-    public void  demitirFunc() throws IOException{
+    //serve para chamar no menu do gerente para que ele possa fazer a remoção do funcionario da lista
+    public void demitirFunc() throws IOException{
         //codigo para remocao do funcionario da lista
         Writer writer = new Writer();
         String arquivoCaminho = "C:\\Restaurante\\Listas\\ListaFuncionarios.txt";
@@ -40,6 +36,16 @@ public class Gerente extends Funcionario {
         System.out.println("Passe o Nome numIdentificação e cargo de quem deseja remover: ");
         String itemParaRemover = scanner.nextLine();
         writer.removerItemArquivo(arquivoCaminho, itemParaRemover);
+    }
+
+    public void removerCliente() throws IOException{
+        Writer writer = new Writer();
+        String caminhoDoArquivoCliente = "C:\\Restaurante\\Listas\\ListaCliente.txt";
+        //usei esse scanner pois estava passando direto
+        scanner.nextLine();
+        System.out.println("Passe o Nome e Id do cliente que deseja remover: ");
+        String removerCliente = scanner.nextLine();
+        writer.removerItemArquivo(caminhoDoArquivoCliente, removerCliente);
     }
 
 //    public void adicionarAtributos(String nome, Integer numIdentifiFuncionario, String cargo){

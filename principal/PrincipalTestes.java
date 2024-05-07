@@ -10,8 +10,15 @@ import java.util.List;
 
 public class PrincipalTestes {
     public static void main(String[] args) throws IOException {
-        Writer writer = new Writer();
 
+        //Testando menu
+        Menu mostrar = new Menu();
+
+        mostrar.menu();
+
+        //Criação do diretorio e arquivos txt
+//        Writer writer = new Writer();
+//
 //        writer.criarDiretorioEArquivo();
 //
 //        List<Cardapio> cardapios = Informacoes.cardapios();
@@ -26,11 +33,5 @@ public class PrincipalTestes {
 //
 //        File arquivoCliente = new File("C:\\Restaurante\\Listas\\ListaCliente.txt");
 //        writer.gravarDadosCliente(arquivoCliente, cliente);
-
-        //Testando menu
-        Menu mostrar = new Menu();
-
-        mostrar.menu();
-
     }
 }

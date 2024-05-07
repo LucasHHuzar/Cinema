@@ -15,8 +15,9 @@ public class Menu extends Gerente {
         //Estou criando menu dentro de outro menu
     public void menu() throws IOException {
         Scanner scanner = new Scanner(System.in);
-
+        Cliente cliente = new Cliente();
         Cardapio cardapio = new Cardapio();
+        Reader reader = new Reader();
 
         int op;
 
@@ -26,7 +27,8 @@ public class Menu extends Gerente {
             System.out.println("1. Cliente");
             System.out.println("2. Gerente");
             System.out.println("3. Funcionario");
-            System.out.println("4. Sair");
+            System.out.println("4. PESQUISAR");
+            System.out.println("5. Sair");
             System.out.print("Escolha uma opção: ");
             op = scanner.nextInt();
             int menu1;
@@ -43,30 +45,23 @@ public class Menu extends Gerente {
                         System.out.println("==============================");
                         System.out.println("Menu CLIENTE:");
                         System.out.println("1. Cardápio");
-                        System.out.println("2. Fazer Pedido");//Tirar pedido e adicionar no menu do garçom
-                        System.out.println("3. Pedir a conta");//Tirar conta e adicionar no menu do garçom
+                        System.out.println("2. pesquisar na lista");//Tirar pedido e adicionar no menu do garçom
                         System.out.println("4. Mostrar Clientes");
                         System.out.println("5. Voltar para o MENU");
                         menu1 = scanner.nextInt();
 
                         switch (menu1){
                             case 1:
-                                Reader reader = new Reader();
-                                String caminhoDoArquivo = "C:\\Restaurante\\Listas\\ListaCardapio.txt";
-                                reader.mostrarArquivo(caminhoDoArquivo);
-
+                                cardapio.listarCardapio();
                                 break;
                             case 2:
-                                //Pedido.addPedidos;
+//                                reader.pesquisarArquivo();
                                 break;
                             case 3:
                                 System.out.println("PEDINDO A CONTA");
                                 break;
                             case 4:
-                                Reader reader1 = new Reader();
-                                String caminhoDoArquivoClientes = "C:\\Restaurante\\Listas\\ListaCliente.txt";
-                                reader1.mostrarArquivo(caminhoDoArquivoClientes);
-                                break;
+                                cliente.listarCliestes();
                             case 5:
                                 System.out.println("...");
                                 returnMenu = true;
@@ -81,10 +76,13 @@ public class Menu extends Gerente {
                         System.out.println("Menu GERENTE:");
                         System.out.println("1. Mostrar Funcionarios");
                         System.out.println("2. !Demitir Funcionario!");
+                        System.out.println(" ");
                         System.out.println("3. Mostrar Clientes");
                         System.out.println("4. !Tirar Clientes!");
+                        System.out.println(" ");
                         System.out.println("5. Mostrar CARDAPIO");
                         System.out.println("6. !Tirar algo do Cardapio!");
+                        System.out.println(" ");
                         System.out.println("7. Sair");
                         menu2 = scanner.nextInt();
 
@@ -99,34 +97,19 @@ public class Menu extends Gerente {
                                 break;
                             case 3:
                                 //mostrando lista dos clientes
-                                Reader reader1 = new Reader();
-                                String caminhoDoArquivoClientes = "C:\\Restaurante\\Listas\\ListaCliente.txt";
-                                reader1.mostrarArquivo(caminhoDoArquivoClientes);
+                                cliente.listarCliestes();
                                 break;
                             case 4:
-                                Writer writer1 = new Writer();
-                                String caminhoDoArquivoCliente = "C:\\Restaurante\\Listas\\ListaCliente.txt";
-                                //usei esse scanner pois estava passando direto
-                                scanner.nextLine();
-                                System.out.println("Passe o Nome e Id do cliente que deseja remover: ");
-                                String removerCliente = scanner.nextLine();
-                                writer1.removerItemArquivo(caminhoDoArquivoCliente, removerCliente);
+                                //codigo para remocao de cliente da lista
+                                removerCliente();
                                 break;
                             case 5:
-                                Reader reader2 = new Reader();
-                                String caminhoDoArquivoCard = "C:\\Restaurante\\Listas\\ListaCardapio.txt";
-                                reader2.mostrarArquivo(caminhoDoArquivoCard);
+                                //mostrando lista do cardapio
+                                cardapio.listarCardapio();
                                 break;
-
                             case 6:
                                 //codigo para remocao de qualquer coisa do cardapio
-                                Writer writer2 = new Writer();
-                                String arquivoCaminhoCard = "C:\\Restaurante\\Listas\\ListaCardapio.txt";
-                                //usei esse scanner pois estava passando direto
-                                scanner.nextLine();
-                                System.out.println("Passe o que deseja retirar, exatemente como esta no Cardapio");
-                                String itemParaRemover1 = scanner.nextLine();
-                                writer2.removerItemArquivo(arquivoCaminhoCard, itemParaRemover1);
+                                removerCliente();
                                 break;
                             case 7:
                                 returnMenu = true;
@@ -157,9 +140,7 @@ public class Menu extends Gerente {
 
                                     switch (menu4){
                                         case 1:
-                                            Reader reader = new Reader();
-                                            String caminhoDoArquivo = "C:\\Restaurante\\Listas\\ListaCardapio.txt";
-                                            reader.mostrarArquivo(caminhoDoArquivo);
+                                            cardapio.listarCardapio();
                                             break;
                                         case 2:
                                             System.out.println("PEDIDO");
@@ -204,7 +185,37 @@ public class Menu extends Gerente {
 
                     }while (!returnMenu);
                     break;
+
                 case 4:
+                        System.out.println("1. Pesquisar Cliente");
+                        System.out.println("2. Pesquisar Funcionario");
+                        System.out.println("3. Pesquisar no Cardapio");
+                        System.out.println("4. Sair");
+                    do {
+                        // esse if verifica se o que o usuário digitou pode ser entendido como um número inteiro
+                        if (scanner.hasNextInt()) {
+                        int menui = scanner.nextInt();
+                        scanner.nextLine();
+
+                        switch (menui) {
+                            case 1:
+                                reader.pesquisarArquivoCliente();
+                                break;
+                            case 2:
+                                reader.pesquisarArquivoFunc();
+                                break;
+                            case 3:
+                                reader.pesquisarArquivoCard();
+                                break;
+                            case 4:
+                                returnMenu = true;
+                                break;
+                            }
+                        }
+
+                    }while (!returnMenu);
+                    break;
+                case 5:
                     System.out.println("SAINDO ...");
                     break;
                 default:

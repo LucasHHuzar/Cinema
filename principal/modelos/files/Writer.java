@@ -103,13 +103,6 @@ import java.util.List;
             }
         }
 
-//            // Imprimir as linhas antes de remover o item
-//            System.out.println("Linhas antes da remoção:");
-//            for (String linha : linhas) {
-//                System.out.println(linha);
-//            }
-
-
         // Excluir um item específico de um arquivo de texto
         public void removerItemArquivo(String arquivoCaminho, String itemParaRemover) throws IOException {
             System.out.println("Item a ser removido: " + itemParaRemover);
@@ -126,6 +119,7 @@ import java.util.List;
             linhas.removeIf(line -> line.trim().equals(itemParaRemover));
 
             // Imprimir as linhas depois de remover o item
+            System.out.println("==========================");
             System.out.println("Linhas depois da remoção:");
             for (String linha : linhas) {
                 System.out.println(linha);
