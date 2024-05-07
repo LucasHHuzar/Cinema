@@ -66,41 +66,40 @@ import java.util.List;
             return arquivo;
         }
 
-        public void gravarDadosCard(File file, List<Cardapio> cardapios) {
-            try (FileWriter fileWriter = new FileWriter(file, true);
-                 PrintWriter printWriter = new PrintWriter(fileWriter)) {
+        public void gravarDadosCard(File file, List<Cardapio> cardapios) throws IOException {
+            FileWriter fileWriter = new FileWriter(file, true);
+            PrintWriter printWriter = new PrintWriter(fileWriter);
 
-                for (Cardapio cardapio : cardapios) {
-                    printWriter.println(cardapio.getTipoPrato() + "," + cardapio.getNumProduto() + "," + cardapio.getNomePrato() + "," +
-                            cardapio.getBebida() + "," + cardapio.getSobremesa() + "," + cardapio.getValor());
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
+            for (Cardapio cardapio : cardapios) {
+                printWriter.println(cardapio.getTipoPrato() + "," + cardapio.getNumProduto() + "," + cardapio.getNomePrato() + "," +
+                        cardapio.getBebida() + "," + cardapio.getSobremesa() + "," + cardapio.getValor());
             }
+
+            printWriter.close();
+            fileWriter.close();
         }
 
-        public void gravarDadosFunc(File file, List<Funcionario> funcionarios) {
-            try (FileWriter fileWriter = new FileWriter(file, true);
-                 PrintWriter printWriter = new PrintWriter(fileWriter)) {
+        public void gravarDadosFunc(File file, List<Funcionario> funcionarios) throws IOException{
+            FileWriter fileWriter = new FileWriter(file, true);
+            PrintWriter printWriter = new PrintWriter(fileWriter);
 
                 for (Funcionario funcionario : funcionarios) {
                     printWriter.println(funcionario.getNome() + "," + funcionario.getNumIdentifiFuncionario() + "," + funcionario.getCargo());
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+                printWriter.close();
+                fileWriter.close();
 
-        public void gravarDadosCliente(File file, List<Cliente> clientes) {
-            try (FileWriter fileWriter = new FileWriter(file, true);
-                 PrintWriter printWriter = new PrintWriter(fileWriter)) {
+            }
+
+        public void gravarDadosCliente(File file, List<Cliente> clientes) throws IOException {
+            FileWriter fileWriter = new FileWriter(file, true);
+            PrintWriter printWriter = new PrintWriter(fileWriter);
 
                 for (Cliente cliente : clientes) {
                     printWriter.println(cliente.getNome() + "," + cliente.getId());
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            printWriter.close();
+            fileWriter.close();
         }
 
         // Excluir um item específico de um arquivo de texto
