@@ -1,3 +1,0 @@
-Ana,3
-João,1
-Maria,2

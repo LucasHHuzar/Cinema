@@ -11,7 +11,6 @@ import java.util.List;
 
 public class Informacoes {
 
-
     public static List<Cliente> listaClientes() {
 
         var listaClien = new ArrayList<Cliente>();
@@ -53,7 +52,7 @@ public class Informacoes {
         cardapio.add(new Cardapio(3, 8, "", "", "Bolo de Pote", 10.00));
         cardapio.add(new Cardapio(3, 9, "", "", "Banana Caramelizada", 9.00));
 
-        Collections.sort(cardapio, (c1, c2) -> c1.getNomePrato().compareTo(c2.getNomePrato()));
+        Collections.sort(cardapio, (c1, c2) -> c1.getNumProduto().compareTo(c2.getNumProduto()));
 
         return cardapio;
     }

@@ -4,14 +4,12 @@
 
 package principal.modelos;
 
-import principal.modelos.files.Reader;
-import principal.modelos.files.Writer;
-
 import java.io.IOException;
-import java.util.*;
 
 public class Cardapio {
-    Writer writer = new Writer();
+
+    FileManager file = new FileManager();
+
     //Iniciei as variáveis
     private Integer tipoPrato;
     private Integer numProduto;
@@ -81,9 +79,10 @@ public class Cardapio {
     }
 
     public void listarCardapio() throws IOException {
-        Reader reader = new Reader();
+
         String caminhoDoArquivoCard = "C:\\Restaurante\\Listas\\ListaCardapio.txt";
-        reader.mostrarArquivo(caminhoDoArquivoCard);
+        file.mostrarArquivo(caminhoDoArquivoCard);
+
     }
 
 }

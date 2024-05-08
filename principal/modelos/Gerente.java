@@ -1,15 +1,12 @@
 package principal.modelos;
 
-import principal.PrincipalTestes;
-import principal.modelos.files.Reader;
-import principal.modelos.files.Writer;
-
 import java.io.IOException;
 import java.util.Scanner;
 
 public class Gerente extends Funcionario {
 
     Scanner scanner = new Scanner(System.in);
+    FileManager file = new FileManager();
 
     private String demitir;
 
@@ -21,31 +18,36 @@ public class Gerente extends Funcionario {
 
     //serve para chamar no menu do gerente para mostrar a lista de funcionarios
     public void listarFunc() throws IOException {
-        Reader reader = new Reader();
+
         String caminhoDoArquivo = "C:\\Restaurante\\Listas\\ListaFuncionarios.txt";
-        reader.mostrarArquivo(caminhoDoArquivo);
+        file.mostrarArquivo(caminhoDoArquivo);
+
     }
 
     //serve para chamar no menu do gerente para que ele possa fazer a remoção do funcionario da lista
     public void demitirFunc() throws IOException{
-        //codigo para remocao do funcionario da lista
-        Writer writer = new Writer();
+
         String arquivoCaminho = "C:\\Restaurante\\Listas\\ListaFuncionarios.txt";
         //usei esse scanner pois estava passando direto
         scanner.nextLine();
-        System.out.println("Passe o Nome numIdentificação e cargo de quem deseja remover: ");
+
+        System.out.println("Passe o Nome ou Número de Identificação de quem deseja remover: ");
         String itemParaRemover = scanner.nextLine();
-        writer.removerItemArquivo(arquivoCaminho, itemParaRemover);
+
+        file.removerItemArquivo(arquivoCaminho, itemParaRemover);
+
     }
 
     public void removerCliente() throws IOException{
-        Writer writer = new Writer();
+
         String caminhoDoArquivoCliente = "C:\\Restaurante\\Listas\\ListaCliente.txt";
         //usei esse scanner pois estava passando direto
         scanner.nextLine();
-        System.out.println("Passe o Nome e Id do cliente que deseja remover: ");
+
+        System.out.println("Passe o Nome ou Id do Cliente que deseja remover: ");
         String removerCliente = scanner.nextLine();
-        writer.removerItemArquivo(caminhoDoArquivoCliente, removerCliente);
+        file.removerItemArquivo(caminhoDoArquivoCliente, removerCliente);
+
     }
 
 //    public void adicionarAtributos(String nome, Integer numIdentifiFuncionario, String cargo){

@@ -1,11 +1,6 @@
 package principal.modelos;
 
-import principal.PrincipalTestes;
-import principal.modelos.files.Reader;
-import principal.modelos.files.Writer;
-
 import java.io.IOException;
-import java.util.List;
 
 import java.util.Scanner;
 
@@ -14,10 +9,12 @@ public class Menu extends Gerente {
     //criando menu...
         //Estou criando menu dentro de outro menu
     public void menu() throws IOException {
+
         Scanner scanner = new Scanner(System.in);
+        Pedido pedido = new Pedido();
         Cliente cliente = new Cliente();
         Cardapio cardapio = new Cardapio();
-        Reader reader = new Reader();
+        FileManager file = new FileManager();
 
         int op;
 
@@ -26,7 +23,7 @@ public class Menu extends Gerente {
             System.out.println("Menu:");
             System.out.println("1. Cliente");
             System.out.println("2. Gerente");
-            System.out.println("3. Funcionario");
+            System.out.println("3. Pedido");
             System.out.println("4. Pesquisar");
             System.out.println("5. Sair");
             System.out.print("Escolha uma opção: ");
@@ -45,9 +42,9 @@ public class Menu extends Gerente {
                         System.out.println("==============================");
                         System.out.println("Menu CLIENTE:");
                         System.out.println("1. Cardápio");
-                        System.out.println("2. pesquisar na lista");//Tirar pedido e adicionar no menu do garçom
-                        System.out.println("4. Mostrar Clientes");
-                        System.out.println("5. Voltar para o MENU");
+                        System.out.println("2. Pesquisar na lista");//Tirar pedido e adicionar no menu do garçom
+                        System.out.println("3. Mostrar Clientes");
+                        System.out.println("4. Voltar para o MENU");
                         menu1 = scanner.nextInt();
 
                         switch (menu1){
@@ -58,11 +55,8 @@ public class Menu extends Gerente {
 //                                reader.pesquisarArquivo();
                                 break;
                             case 3:
-                                System.out.println("PEDINDO A CONTA");
-                                break;
+                                cliente.listarClientes();
                             case 4:
-                                cliente.listarCliestes();
-                            case 5:
                                 System.out.println("...");
                                 returnMenu = true;
                         }
@@ -97,7 +91,7 @@ public class Menu extends Gerente {
                                 break;
                             case 3:
                                 //mostrando lista dos clientes
-                                cliente.listarCliestes();
+                                cliente.listarClientes();
                                 break;
                             case 4:
                                 //codigo para remocao de cliente da lista
@@ -121,9 +115,9 @@ public class Menu extends Gerente {
                 case 3:
                     do {
                         System.out.println("==============================");
-                        System.out.println("Menu Funcionário:");
-                        System.out.println("1. Garçom");
-                        System.out.println("2. Caixa");
+                        System.out.println("Menu Pedido:");
+                        System.out.println("1. Fazer pedido");
+                        System.out.println("2. Mostrar pedidos");
                         System.out.println("3. Sair");
                         menu3 = scanner.nextInt();
 
@@ -143,7 +137,7 @@ public class Menu extends Gerente {
                                             cardapio.listarCardapio();
                                             break;
                                         case 2:
-                                            System.out.println("PEDIDO");
+                                            pedido.adicionarPedido();
                                             break;
                                         case 3:
                                             System.out.println("CONTA");
@@ -199,13 +193,13 @@ public class Menu extends Gerente {
 
                         switch (menui) {
                             case 1:
-                                reader.pesquisarArquivoCliente();
+                                file.pesquisarArquivoCliente();
                                 break;
                             case 2:
-                                reader.pesquisarArquivoFunc();
+                                file.pesquisarArquivoFunc();
                                 break;
                             case 3:
-                                reader.pesquisarArquivoCard();
+                                file.pesquisarArquivoCard();
                                 break;
                             case 4:
                                 returnMenu = true;

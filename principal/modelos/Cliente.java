@@ -1,13 +1,10 @@
 package principal.modelos;
 
-import principal.modelos.files.Reader;
-
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 public class Cliente {
+
+    FileManager file = new FileManager();
 
     private String nome;
     private Integer id;
@@ -27,10 +24,11 @@ public class Cliente {
         return id;
     }
 
-    public void listarCliestes() throws IOException {
-        Reader reader = new Reader();
+    public void listarClientes() throws IOException {
+
         String caminhoDoArquivo = "C:\\Restaurante\\Listas\\ListaCliente.txt";
-        reader.mostrarArquivo(caminhoDoArquivo);
+        file.mostrarArquivo(caminhoDoArquivo);
+
     }
 
 
