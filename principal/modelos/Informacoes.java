@@ -6,6 +6,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Informacoes {
@@ -19,6 +20,9 @@ public class Informacoes {
         listaClien.add(new Cliente("Maria", 2));
         listaClien.add(new Cliente("Ana", 3));
 
+        // Ordenando a lista por nome
+        Collections.sort(listaClien, (c1, c2) -> c1.getNome().compareTo(c2.getNome()));
+
         return listaClien;
     }
 
@@ -29,6 +33,8 @@ public class Informacoes {
         listaFunc.add(new Funcionario("Lucas", 1, "Gerente"));
         listaFunc.add(new Funcionario("André", 2, "Administrativo"));
         listaFunc.add(new Funcionario("Felipe", 3, "Garçom"));
+
+        Collections.sort(listaFunc, (c1, c2) -> c1.getNome().compareTo(c2.getNome()));
 
         return listaFunc;
     }
@@ -46,6 +52,8 @@ public class Informacoes {
         cardapio.add(new Cardapio(3, 7, "", "", "Petit-Gateau", 20.90));
         cardapio.add(new Cardapio(3, 8, "", "", "Bolo de Pote", 10.00));
         cardapio.add(new Cardapio(3, 9, "", "", "Banana Caramelizada", 9.00));
+
+        Collections.sort(cardapio, (c1, c2) -> c1.getNomePrato().compareTo(c2.getNomePrato()));
 
         return cardapio;
     }

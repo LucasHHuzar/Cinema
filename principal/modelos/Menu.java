@@ -27,7 +27,7 @@ public class Menu extends Gerente {
             System.out.println("1. Cliente");
             System.out.println("2. Gerente");
             System.out.println("3. Funcionario");
-            System.out.println("4. PESQUISAR");
+            System.out.println("4. Pesquisar");
             System.out.println("5. Sair");
             System.out.print("Escolha uma opção: ");
             op = scanner.nextInt();
@@ -222,7 +222,7 @@ public class Menu extends Gerente {
                     System.out.println("Opção inválida. Tente novamente!");
             }
 
-        } while (op != 4);
+        } while (op != 5);
     }
 
 }

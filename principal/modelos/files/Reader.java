@@ -93,7 +93,7 @@ public class Reader {
         System.out.print("Digite o que você deseja pesquisar: ");
         String pesquisa = scanner.nextLine();
 
-        scanner.close(); //fechando o scanner aqui pois la em baixo estava dando erro
+        scanner.close(); //fechando o scanner aqui pois la em baixo estava dando erro.
 
         // Caminho completo do arquivo
         String caminhoArquivo = "C:\\Restaurante\\Listas\\ListaCardapio.txt";

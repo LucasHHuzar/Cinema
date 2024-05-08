@@ -12,6 +12,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
     public class Writer {
@@ -129,23 +130,7 @@ import java.util.List;
         }
 
 
-        // Listar itens de um arquivo de texto de maneira ordenada
-        public List<String> listarItensOrdenados(File arquivo) throws IOException {
-            List<String> itens = new ArrayList<>();
-            BufferedReader reader = new BufferedReader(new FileReader(arquivo));
 
-            String linha = null;
-            while ((linha = reader.readLine()) != null) {
-                itens.add(linha);
-            }
-
-            if (reader != null) {
-                reader.close();
-            }
-
-            Collections.sort(itens);
-            return itens;
-        }
 
     }
 

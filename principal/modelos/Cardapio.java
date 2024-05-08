@@ -5,14 +5,13 @@
 package principal.modelos;
 
 import principal.modelos.files.Reader;
+import principal.modelos.files.Writer;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Cardapio {
-
+    Writer writer = new Writer();
     //Iniciei as variáveis
     private Integer tipoPrato;
     private Integer numProduto;
