@@ -14,7 +14,7 @@ public class FileManager {
 
     Informacoes info = new Informacoes();
 
-    public static void adicionarClientes() throws IOException{
+    public void adicionarClientes() throws IOException{
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Digite o nome do cliente:");
@@ -23,7 +23,6 @@ public class FileManager {
         String id = scanner.nextLine();
 
         scanner.close();
-
 
         String caminhoArquivo = "C:\\Restaurante\\Listas\\ListaCliente.txt";
         FileWriter fileWriter = new FileWriter(caminhoArquivo, true);
@@ -41,11 +40,15 @@ public class FileManager {
         // Escrevendo a lista ordenada de volta no arquivo
         Files.write(Paths.get(caminhoArquivo), linhas, StandardCharsets.UTF_8, StandardOpenOption.WRITE);
 
+        System.out.println("Cliente adicionado com sucesso!");
+
+
         printWriter.close();
         fileWriter.close();
+
     }
 
-    public static void adicionarFunc() throws IOException{
+    public void adicionarFunc() throws IOException{
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Digite o nome do Funcionario:");
@@ -78,7 +81,7 @@ public class FileManager {
         fileWriter.close();
     }
 
-    public static void mostrarArquivo(String caminhoDoArquivo) throws IOException {
+    public void mostrarArquivo(String caminhoDoArquivo) throws IOException {
 
         Path filePath = Paths.get(caminhoDoArquivo);
         List<String> linhas = Files.readAllLines(filePath, StandardCharsets.UTF_8);
@@ -270,8 +273,8 @@ public class FileManager {
         System.out.println("Item a ser removido: " + itemParaRemover);
 
         Path filePath = Paths.get(arquivoCaminho);
-        //StandardCharsets.UTF_8 em um código Java, significa que o programa está
-        // usando esse "dicionário" de caracteres UTF-8 para entender e trabalhar com textos e informações.
+        //StandardCharsets.UTF_8, significa que o programa está usando esse "dicionário"
+        //de caracteres UTF-8 para entender e trabalhar com textos e informações.
         List<String> linhas = Files.readAllLines(filePath, StandardCharsets.UTF_8);
 
         // Imprimir as linhas antes de remover o item
@@ -280,6 +283,7 @@ public class FileManager {
             System.out.println(linha);
         }
 
+        //O método trim() é utilizado para remover os espaços em branco do início e do fim de uma string
         linhas.removeIf(line -> line.trim().equals(itemParaRemover));
 
         // Imprimir as linhas depois de remover o item
