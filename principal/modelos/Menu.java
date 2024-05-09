@@ -43,31 +43,6 @@ public class Menu extends Gerente {
 
             switch (op) {
                 case 1:
-//                    boolean continueClienteMenu = true;
-//                    while (continueClienteMenu) {
-//                        System.out.println("==============================");
-//                        System.out.println("Menu CLIENTE:");
-//                        System.out.println("1. Adicionar Cliente");
-//                        System.out.println("2. Mostrar Clientes");
-//                        System.out.println("3. Voltar para o MENU");
-//                        menu1 = scanner.nextInt();
-//
-//                        switch (menu1) {
-//                            case 1:
-//                                file.adicionarClientes();
-//                                break;
-//                            case 2:
-//                                cliente.listarClientes();
-//                                break;
-//                            case 3:
-//                                continueClienteMenu = false;
-//                                break;
-//                            default:
-//                                System.out.println("Opção inválida. Tente novamente.");
-//                        }
-//                    }
-//                    break;
-
                     do {
                         System.out.println("==============================");
                         System.out.println("Menu CLIENTE:");
@@ -96,16 +71,15 @@ public class Menu extends Gerente {
                         System.out.println("==============================");
                         System.out.println("Menu GERENTE:");
                         System.out.println("1. Mostrar Funcionarios");
-                        System.out.println("2. Adicionar Funcionário");
-                        System.out.println("3. !Demitir Funcionario!");
+                        System.out.println("2. !Demitir Funcionario!");
                         System.out.println(" ");
-                        System.out.println("4. Mostrar Clientes");
-                        System.out.println("5. !Tirar Clientes!");
+                        System.out.println("3. Mostrar Clientes");
+                        System.out.println("4. !Tirar Clientes!");
                         System.out.println(" ");
-                        System.out.println("6. Mostrar CARDAPIO");
-                        System.out.println("7. !Tirar algo do Cardapio!");
+                        System.out.println("5. Mostrar CARDAPIO");
+                        System.out.println("6. !Tirar algo do Cardapio!");
                         System.out.println(" ");
-                        System.out.println("8. Sair");
+                        System.out.println("7. Sair");
                         menu2 = scanner.nextInt();
 
                         switch (menu2) {
@@ -115,32 +89,27 @@ public class Menu extends Gerente {
                                 break;
 
                             case 2:
-                                //mostrando lista de funcionarios
-                                file.adicionarFunc();
-                                break;
-
-                            case 3:
                                 //codigo para remocao do funcionario da lista
                                 demitirFunc();
                                 break;
 
-                            case 4:
+                            case 3:
                                 //mostrando lista dos clientes
                                 cliente.listarClientes();
                                 break;
-                            case 5:
+                            case 4:
                                 //codigo para remocao de cliente da lista
                                 removerCliente();
                                 break;
-                            case 6:
+                            case 5:
                                 //mostrando lista do cardapio
                                 cardapio.listarCardapio();
                                 break;
-                            case 7:
+                            case 6:
                                 //codigo para remocao de qualquer coisa do cardapio
-                                removerCliente();
+                                removerCard();
                                 break;
-                            case 8:
+                            case 7:
                                 returnMenu = true;
                         }
 

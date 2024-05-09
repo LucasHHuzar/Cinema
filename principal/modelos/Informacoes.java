@@ -42,13 +42,13 @@ public class Informacoes {
 
         var cardapio = new ArrayList<Cardapio>();
 
-        cardapio.add(new Cardapio(1, 1, "Strogonoff de Frango", "", "", 22.00));
-        cardapio.add(new Cardapio(1, 2, "Batata Frita", "", "", 8.00));
+        cardapio.add(new Cardapio(1, 1, "Batata Frita", "", "", 11.00));
+        cardapio.add(new Cardapio(1, 2, "Strogonoff de Frango", "", "", 22.00));
         cardapio.add(new Cardapio(1, 3, "Bife Parmegiana", "", "", 10.00));
         cardapio.add(new Cardapio(2, 4, "", "Água", "", 2.00));
-        cardapio.add(new Cardapio(2, 5, "", "Coca-Cola", "", 6.00));
-        cardapio.add(new Cardapio(2, 6, "", "Chocomilk", "", 5.50));
-        cardapio.add(new Cardapio(3, 7, "", "", "Petit-Gateau", 20.90));
+        cardapio.add(new Cardapio(2, 5, "", "Coca-Cola", "", 5.50));
+        cardapio.add(new Cardapio(2, 6, "", "Chocomilk", "", 6.00));
+        cardapio.add(new Cardapio(3, 7, "", "", "Petit-Gateau", 20.00));
         cardapio.add(new Cardapio(3, 8, "", "", "Bolo de Pote", 10.00));
         cardapio.add(new Cardapio(3, 9, "", "", "Banana Caramelizada", 9.00));
 

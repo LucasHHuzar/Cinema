@@ -50,37 +50,15 @@ public class Gerente extends Funcionario {
 
     }
 
-//    public void adicionarAtributos(String nome, Integer numIdentifiFuncionario, String cargo){
-//
-//        Funcionario func = new Funcionario();
-//
-//        func.nome = nome;
-//        func.numIdentifiFuncionario = numIdentifiFuncionario;
-//        func.cargo = cargo;
-//
-//        funcionarios.add(func);
-//    }
+    public void removerCard() throws IOException{
 
-    //Criei uma classe para adicionar funcionários
-//    public void addFuncionario(){
-//
-//        Scanner scanner = new Scanner(System.in);
-//
-//        for (int i = 0; i < 2; i++) {
-//
-//            System.out.println("Qual o nome do funcionário?");
-//            this.nome = scanner.nextLine();
-//
-//            System.out.println("Qual o número de identificação do funcionário?");
-//            this.numIdentifiFuncionario = scanner.nextInt();
-//            scanner.nextLine();
-//
-//            System.out.println("Qual o cargo do funcionário (Gerente, Administrativo ou Garçom)?");
-//            this.cargo = scanner.nextLine();
-//
-//            adicionarAtributos(nome, numIdentifiFuncionario, cargo);
-//
-//        }
+        String caminhoDoArquivoCard = "C:\\Restaurante\\Listas\\ListaCardapio.txt";
 
-       // scanner.close();
+        System.out.println("Passe o nome do produto que deseja remover: ");
+        String removerCard = scanner.nextLine();
+        file.removerItemArquivo(caminhoDoArquivoCard, removerCard);
+
+    }
+
+
 }
