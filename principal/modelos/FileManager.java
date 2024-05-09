@@ -5,12 +5,78 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 public class FileManager {
 
     Informacoes info = new Informacoes();
+
+    public static void adicionarClientes() throws IOException{
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite o nome do cliente:");
+        String nome = scanner.nextLine();
+        System.out.println("Digite o ID do cliente:");
+        String id = scanner.nextLine();
+
+        scanner.close();
+
+
+        String caminhoArquivo = "C:\\Restaurante\\Listas\\ListaCliente.txt";
+        FileWriter fileWriter = new FileWriter(caminhoArquivo, true);
+        PrintWriter printWriter = new PrintWriter(fileWriter);
+
+        // Lendo todos os clientes atuais
+        List<String> linhas = Files.readAllLines(Paths.get(caminhoArquivo), StandardCharsets.UTF_8);
+
+        // Adicionando o novo cliente à lista
+        linhas.add(nome + "," + id);
+
+        // Ordenando a lista
+        Collections.sort(linhas);
+
+        // Escrevendo a lista ordenada de volta no arquivo
+        Files.write(Paths.get(caminhoArquivo), linhas, StandardCharsets.UTF_8, StandardOpenOption.WRITE);
+
+        printWriter.close();
+        fileWriter.close();
+    }
+
+    public static void adicionarFunc() throws IOException{
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite o nome do Funcionario:");
+        String nomeFunc = scanner.nextLine();
+        System.out.println("Digite o numIdentificador:");
+        String numId = scanner.nextLine();
+        System.out.println("Digite o cargo:");
+        String cargo = scanner.nextLine();
+
+        scanner.close();
+
+        String caminhoArquivo = "C:\\Restaurante\\Listas\\ListaFuncionarios.txt";
+        FileWriter fileWriter = new FileWriter(caminhoArquivo, true);
+        PrintWriter printWriter = new PrintWriter(fileWriter);
+
+        // Lendo todos os clientes atuais
+        List<String> linhas = Files.readAllLines(Paths.get(caminhoArquivo), StandardCharsets.UTF_8);
+
+        // Adicionando o novo cliente à lista
+        linhas.add(nomeFunc+"," + numId + "," + cargo);;
+
+        // Ordenando a lista
+        Collections.sort(linhas);
+
+        // Escrevendo a lista ordenada de volta no arquivo    StandardOpenOption.WRITE esta indicando que deseja abrir o arquivo
+        Files.write(Paths.get(caminhoArquivo), linhas, StandardCharsets.UTF_8, StandardOpenOption.WRITE);
+
+
+        printWriter.close();
+        fileWriter.close();
+    }
 
     public static void mostrarArquivo(String caminhoDoArquivo) throws IOException {
 

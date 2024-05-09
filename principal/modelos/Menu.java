@@ -25,7 +25,8 @@ public class Menu extends Gerente {
             System.out.println("2. Gerente");
             System.out.println("3. Pedido");
             System.out.println("4. Pesquisar");
-            System.out.println("5. Sair");
+            System.out.println("5. Adicionar");
+            System.out.println("6. Sair");
             System.out.print("Escolha uma opção: ");
             op = scanner.nextInt();
             int menu1;
@@ -33,6 +34,7 @@ public class Menu extends Gerente {
             int menu3;
             int menu4;
             int menu5;
+            int menu6;
 
             boolean returnMenu = false;
 
@@ -210,13 +212,35 @@ public class Menu extends Gerente {
                     }while (!returnMenu);
                     break;
                 case 5:
+                        System.out.println("1. Adicionar Cliente");
+                        System.out.println("2. Adicionar Funcionario");
+                        System.out.println("3. Sair");
+                    do {
+                        if (scanner.hasNextInt()) {
+                            menu6 = scanner.nextInt();
+                            switch (menu6) {
+                                case 1:
+                                    file.adicionarClientes();
+                                    break;
+                                case 2:
+                                    file.adicionarFunc();
+                                    break;
+                                case 3:
+                                    returnMenu = true;
+                                    break;
+                            }
+                        }
+
+                    }while (!returnMenu);
+                    break;
+                case 6:
                     System.out.println("SAINDO ...");
                     break;
                 default:
                     System.out.println("Opção inválida. Tente novamente!");
             }
 
-        } while (op != 5);
+        } while (op != 6);
     }
 
 }
